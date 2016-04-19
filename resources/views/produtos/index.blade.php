@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="container">
-    <h1>Produtos</h1>    
+    <h1>Produtos</h1>  
+    
+    <a href="{{route('novoProduto')}}" class="btn btn-default">Novo Produto</a><br/><br/>
+    
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -18,7 +21,10 @@
                     <td>{{ $produto->id }}</td>
                     <td>{{ $produto->nome }}</td>
                     <td>{{ $produto->descricao }}</td>
-                    <td></td>
+                    <td>
+                        <a href="{{route('editProduto', ['id' => $produto->id])}}" class="btn-sm btn-success">Editar</a>
+                        <a href="{{route('excluirProduto', ['id' => $produto->id])}}" class="btn-sm btn-danger">Remover</a>
+                    </td>
                 </tr>
             @endforeach            
         </tbody>
