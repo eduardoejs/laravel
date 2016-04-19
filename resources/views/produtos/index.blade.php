@@ -12,6 +12,8 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th>Avaliações</th>
+                <th>Tags</th>
                 <th>Ações</th>                
             </tr>
         </thead>
@@ -21,6 +23,12 @@
                     <td>{{ $produto->id }}</td>
                     <td>{{ $produto->nome }}</td>
                     <td>{{ $produto->descricao }}</td>
+                    <td>{{ count($produto->avaliacoes) }}</td>
+                    <td>
+                        @foreach($produto->tags as $tag)
+                            {{$tag->name}}
+                        @endforeach
+                    </td>
                     <td>
                         <a href="{{route('editProduto', ['id' => $produto->id])}}" class="btn-sm btn-success">Editar</a>
                         <a href="{{route('excluirProduto', ['id' => $produto->id])}}" class="btn-sm btn-danger">Remover</a>
