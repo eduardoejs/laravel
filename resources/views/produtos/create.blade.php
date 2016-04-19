@@ -9,7 +9,7 @@
             @endforeach
         </ul>
     @endif
-    {!! Form::open(['url' => 'produtos/store']) !!}
+    {!! Form::open(['route' => 'gravarProduto']) !!}
     <div class="form-group">
         {!! Form::label('nome', 'Nome:') !!}
         {!! Form::text('nome', null, ['class'=>'form-control']) !!}
