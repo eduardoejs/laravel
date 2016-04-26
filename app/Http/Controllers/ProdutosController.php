@@ -8,6 +8,12 @@ use EJS\Produto;
 
 class ProdutosController extends Controller
 {
+    public function __construct() 
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index()
     {
         $produtos = Produto::all();
