@@ -24,3 +24,7 @@ Route::group(['prefix' => 'produtos', 'where' => ['id' => '[0-9]+']], function()
     Route::put('{id}/update', ['as' => 'alterarProduto', 'uses' => 'ProdutosController@update']);    
 });
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
